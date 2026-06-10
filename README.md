@@ -1,6 +1,6 @@
 # ReactJS-Mastery
 
-A complete ReactJS practical learning repository.
+Complete ReactJS learning journey from fundamentals to advanced concepts.
 
 ## Topics
 
@@ -14,11 +14,14 @@ A complete ReactJS practical learning repository.
 - useEffect
 - API Integration
 - Routing
-- CRUD Operations
+- CRUD
 - useReducer
 - Redux
 - Redux Toolkit
 - Lazy Loading
 - Protected Routes
-- Higher Order Components
-- Employee Management Dashboard
+- HOC
+
+## Main Project
+
+Employee Management Dashboard
