@@ -7,7 +7,6 @@ import {
 function EmployeeCard({
   employee,
 }) {
-
   const dispatch =
     useDispatch();
 
@@ -15,10 +14,10 @@ function EmployeeCard({
     <div
       style={{
         border:
-          "1px solid gray",
-        margin: "10px",
-        padding: "10px",
-        borderRadius: "8px",
+          "1px solid #ddd",
+        padding: "15px",
+        marginBottom: "10px",
+        borderRadius: "10px",
       }}
     >
       <h3>
@@ -26,7 +25,15 @@ function EmployeeCard({
       </h3>
 
       <p>
+        Email:
+        {" "}
         {employee.email}
+      </p>
+
+      <p>
+        Department:
+        {" "}
+        {employee.department}
       </p>
 
       <button
