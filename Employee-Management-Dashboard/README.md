@@ -1,16 +1,61 @@
-# React + Vite
+# ReactJS-Mastery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete hands-on ReactJS learning repository covering beginner to advanced React concepts.
 
-Currently, two official plugins are available:
+## Topics Covered
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Fundamentals
 
-## React Compiler
+* JSX
+* Components
+* Props
+* useState
+* Event Handling
+* Forms
+* List Rendering
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Intermediate
 
-## Expanding the ESLint configuration
+* useEffect
+* API Integration
+* Routing
+* CRUD Operations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Advanced
+
+* useReducer
+* Redux
+* Redux Toolkit
+* Lazy Loading
+* Protected Routes
+* Higher Order Components (HOC)
+
+## Final Project
+
+### Employee Management Dashboard
+
+Features:
+
+* Authentication
+* Protected Routes
+* Redux Toolkit State Management
+* Employee CRUD
+* Employee Search
+* Department Filtering
+* API Integration
+* Dashboard Statistics
+* LocalStorage Persistence
+* Lazy Loaded Routes
+
+## Tech Stack
+
+* ReactJS
+* Redux Toolkit
+* React Router DOM
+* Axios
+* Vite
+* JavaScript
+
+## Learning Outcome
+
+This repository demonstrates practical understanding of modern React development and frontend application architecture.

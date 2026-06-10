@@ -32,78 +32,38 @@ function Dashboard() {
     <>
       <Navbar />
 
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
+      <div className="container">
         <Sidebar />
 
-        <div
-          style={{
-            padding: "20px",
-          }}
-        >
+        <div className="content">
           <h1>Dashboard</h1>
 
           <div
             style={{
               display: "flex",
               gap: "20px",
+              marginTop: "20px",
+              flexWrap: "wrap",
             }}
           >
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "20px",
-                width: "200px",
-              }}
-            >
+            <div className="card">
               <h3>Total Employees</h3>
-
-              <h1>
-                {employees.length}
-              </h1>
+              <h1>{employees.length}</h1>
             </div>
 
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "20px",
-                width: "200px",
-              }}
-            >
+            <div className="card">
               <h3>Engineering</h3>
-
-              <h1>
-                {engineeringCount}
-              </h1>
+              <h1>{engineeringCount}</h1>
             </div>
 
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "20px",
-                width: "200px",
-              }}
-            >
+            <div className="card">
               <h3>HR</h3>
-
               <h1>{hrCount}</h1>
             </div>
 
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "20px",
-                width: "200px",
-              }}
-            >
+            <div className="card">
               <h3>Finance</h3>
-
-              <h1>
-                {financeCount}
-              </h1>
+              <h1>{financeCount}</h1>
             </div>
           </div>
         </div>

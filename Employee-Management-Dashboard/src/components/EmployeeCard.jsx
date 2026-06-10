@@ -11,18 +11,10 @@ function EmployeeCard({
     useDispatch();
 
   return (
-    <div
-      style={{
-        border:
-          "1px solid #ddd",
-        padding: "15px",
-        marginBottom: "10px",
-        borderRadius: "10px",
-      }}
-    >
-      <h3>
-        {employee.name}
-      </h3>
+    <div className="card">
+      <h2>{employee.name}</h2>
+
+      <br />
 
       <p>
         Email:
@@ -36,7 +28,10 @@ function EmployeeCard({
         {employee.department}
       </p>
 
+      <br />
+
       <button
+        className="btn"
         onClick={() =>
           dispatch(
             deleteEmployee(

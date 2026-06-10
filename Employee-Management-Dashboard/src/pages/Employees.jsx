@@ -17,35 +17,45 @@ function Employees() {
     (state) => state.employee.employees
   );
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] =
+    useState("");
 
   const [department, setDepartment] =
     useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getEmployees();
+    if (employees.length === 0) {
+      const fetchData = async () => {
+        const data =
+          await getEmployees();
 
-      const employeesWithDepartment =
-        data.map((employee, index) => ({
-          ...employee,
-          department:
-            index % 3 === 0
-              ? "Engineering"
-              : index % 3 === 1
-              ? "HR"
-              : "Finance",
-        }));
+        const employeesWithDepartment =
+          data.map(
+            (employee, index) => ({
+              ...employee,
 
-      dispatch(
-        setEmployees(
-          employeesWithDepartment
-        )
-      );
-    };
+              department:
+                index % 3 === 0
+                  ? "Engineering"
+                  : index % 3 === 1
+                  ? "HR"
+                  : "Finance",
+            })
+          );
 
-    fetchData();
-  }, [dispatch]);
+        dispatch(
+          setEmployees(
+            employeesWithDepartment
+          )
+        );
+      };
+
+      fetchData();
+    }
+  }, [
+    dispatch,
+    employees.length,
+  ]);
 
   const filteredEmployees =
     employees.filter((employee) => {
@@ -71,22 +81,16 @@ function Employees() {
     <>
       <Navbar />
 
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
+      <div className="container">
         <Sidebar />
 
-        <div
-          style={{
-            padding: "20px",
-            width: "100%",
-          }}
-        >
+        <div className="content">
           <h1>Employees</h1>
 
+          <br />
+
           <input
+            className="input"
             type="text"
             placeholder="Search Employee"
             value={search}
@@ -97,10 +101,8 @@ function Employees() {
             }
           />
 
-          <br />
-          <br />
-
           <select
+            className="select"
             value={department}
             onChange={(e) =>
               setDepartment(

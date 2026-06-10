@@ -2,54 +2,100 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 
-import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
+import {
+  lazy,
+  Suspense,
+} from "react";
 
 import ProtectedRoute from "../components/ProtectedRoute";
 
-import Employees from "../pages/Employees";
-import AddEmployee from "../pages/AddEmployee";
+const Login = lazy(() =>
+  import("../pages/Login")
+);
+
+const Dashboard = lazy(() =>
+  import("../pages/Dashboard")
+);
+
+const Employees = lazy(() =>
+  import("../pages/Employees")
+);
+
+const AddEmployee = lazy(() =>
+  import(
+    "../pages/AddEmployee"
+  )
+);
+
+const EditEmployee = lazy(() =>
+  import(
+    "../pages/EditEmployee"
+  )
+);
 
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <Suspense
+        fallback={
+          <h1>Loading...</h1>
+        }
+      >
+        <Routes>
 
-      <Routes>
-            <Route
-    path="/employees"
-    element={
-        <ProtectedRoute>
-        <Employees />
-        </ProtectedRoute>
-    }
-    />
+          <Route
+            path="/"
+            element={<Login />}
+          />
 
-    <Route
-    path="/add-employee"
-    element={
-        <ProtectedRoute>
-        <AddEmployee />
-        </ProtectedRoute>
-    }
-    />
-        <Route
-          path="/"
-          element={<Login />}
-        />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/employees"
+            element={
+              <ProtectedRoute>
+                <Employees />
+              </ProtectedRoute>
+            }
+          />
 
-      </Routes>
+          <Route
+            path="/add-employee"
+            element={
+              <ProtectedRoute>
+                <AddEmployee />
+              </ProtectedRoute>
+            }
+          />
 
+          <Route
+            path="/edit"
+            element={
+              <ProtectedRoute>
+                <EditEmployee />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="*"
+            element={
+              <Navigate to="/" />
+            }
+          />
+
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

@@ -7,18 +7,10 @@ function AddEmployee() {
     <>
       <Navbar />
 
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
+      <div className="container">
         <Sidebar />
 
-        <div
-          style={{
-            padding: "20px",
-          }}
-        >
+        <div className="content">
           <EmployeeForm />
         </div>
       </div>

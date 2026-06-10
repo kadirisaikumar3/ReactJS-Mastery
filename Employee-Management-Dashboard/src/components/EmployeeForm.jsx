@@ -6,20 +6,22 @@ import { addEmployee } from "../redux/employeeSlice";
 function EmployeeForm() {
   const dispatch = useDispatch();
 
-  const [name, setName] = useState("");
-  const [department, setDepartment] = useState("");
+  const [name, setName] =
+    useState("");
+
+  const [department, setDepartment] =
+    useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!name || !department) return;
 
     dispatch(
       addEmployee({
         id: Date.now(),
         name,
         department,
-        email: `${name}@company.com`,
+        email:
+          `${name}@company.com`,
       })
     );
 
@@ -28,50 +30,66 @@ function EmployeeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="card">
       <h2>Add Employee</h2>
 
-      <input
-        type="text"
-        placeholder="Employee Name"
-        value={name}
-        onChange={(e) =>
-          setName(e.target.value)
-        }
-      />
+      <br />
 
-      <br /><br />
-
-      <select
-        value={department}
-        onChange={(e) =>
-          setDepartment(e.target.value)
-        }
+      <form
+        onSubmit={handleSubmit}
       >
-        <option value="">
-          Select Department
-        </option>
+        <input
+          className="input"
+          type="text"
+          placeholder="Employee Name"
+          value={name}
+          onChange={(e) =>
+            setName(
+              e.target.value
+            )
+          }
+        />
 
-        <option value="Engineering">
-          Engineering
-        </option>
+        <br />
+        <br />
 
-        <option value="HR">
-          HR
-        </option>
+        <select
+          className="select"
+          value={department}
+          onChange={(e) =>
+            setDepartment(
+              e.target.value
+            )
+          }
+        >
+          <option value="">
+            Select Department
+          </option>
 
-        <option value="Finance">
-          Finance
-        </option>
+          <option value="Engineering">
+            Engineering
+          </option>
 
-      </select>
+          <option value="HR">
+            HR
+          </option>
 
-      <br /><br />
+          <option value="Finance">
+            Finance
+          </option>
+        </select>
 
-      <button type="submit">
-        Add Employee
-      </button>
-    </form>
+        <br />
+        <br />
+
+        <button
+          className="btn"
+          type="submit"
+        >
+          Add Employee
+        </button>
+      </form>
+    </div>
   );
 }
 
