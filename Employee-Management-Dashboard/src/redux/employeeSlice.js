@@ -8,19 +8,34 @@ const employeeSlice = createSlice({
   },
 
   reducers: {
-    setEmployees: (state, action) => {
-      state.employees = action.payload;
+
+    setEmployees: (
+      state,
+      action
+    ) => {
+      state.employees =
+        action.payload;
     },
 
-    addEmployee: (state, action) => {
-      state.employees.push(action.payload);
+    addEmployee: (
+      state,
+      action
+    ) => {
+      state.employees.push(
+        action.payload
+      );
     },
 
-    deleteEmployee: (state, action) => {
+    deleteEmployee: (
+      state,
+      action
+    ) => {
+
       state.employees =
         state.employees.filter(
           (employee) =>
-            employee.id !== action.payload
+            employee.id !==
+            action.payload
         );
     },
   },
