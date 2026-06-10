@@ -1,11 +1,30 @@
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+
 function Dashboard() {
   return (
     <>
-      <h1>Dashboard</h1>
+      <Navbar />
 
-      <p>
-        Welcome Admin
-      </p>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <Sidebar />
+
+        <div
+          style={{
+            padding: "20px",
+          }}
+        >
+          <h1>Dashboard</h1>
+
+          <p>
+            Welcome Admin
+          </p>
+        </div>
+      </div>
     </>
   );
 }
